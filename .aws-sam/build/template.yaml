@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'UserGateWay
+
+  Sample SAM Template for UserGateWay
+
+  '
+Globals:
+  Function:
+    Timeout: 3
+Resources:
+  UserGateWayFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: UserGateWayFunction
+      Handler: UserGateWay
+      Runtime: go1.x
+      Architectures:
+      - x86_64
+      Events:
+        HelloWorlEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: GET
+        RegistrationEvent:
+          Type: Api
+          Properties:
+            Path: /user/registration
+            Method: POST
+        LoginEvent:
+          Type: Api
+          Properties:
+            Path: /user/login
+            Method: POST
+        LogOutEvent:
+          Type: Api
+          Properties:
+            Path: /user/logout
+            Method: POST
+        DepositEvent:
+          Type: Api
+          Properties:
+            Path: /user/deposits
+            Method: POST
+        WithdrawalsEvent:
+          Type: Api
+          Properties:
+            Path: /user/withdraws
+            Method: POST
+    Metadata:
+      SamResourceId: UserGateWayFunction
