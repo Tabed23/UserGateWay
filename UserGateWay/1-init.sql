@@ -5,7 +5,7 @@ CREATE TABLE "public"."registration"(member_id        integer,
                                      status           character varying(256),
                                      register_ip       character varying(256),
                                      account_status    character varying(256),
-                                     createdat        integer 
+                                     createdat        integer ,
                                      register_platform character varying(256) 
                                      );
 

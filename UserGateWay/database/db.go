@@ -4,9 +4,8 @@ import (
 	"database/sql"
 	"os"
 
-	_ "github.com/lib/pq"
-
 	"github.com/Tabed23/UserGateWay/utils"
+	_ "github.com/lib/pq"
 )
 
 var (
